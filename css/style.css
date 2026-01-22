@@ -239,6 +239,15 @@ nav a:hover::after {
 .service-form button {
   margin-top: 20px;
 }
+.contact-form select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  background: #ffffff;
+}
 
 /* =====================
    BREADCRUMB
