@@ -663,6 +663,147 @@ nav a:hover {
     transform: none;
   }
 
+/* =========================================================
+   DARK THEME – PROFESSIONAL MODE
+========================================================= */
+
+body {
+  background: #0f172a; /* deep navy */
+  color: #e5e7eb;
+}
+
+/* Containers become dark cards */
+.section .container {
+  background: #111827;
+  border: 1px solid #1f2937;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #020617 0%,
+    #020617 40%,
+    #0f172a 100%
+  );
+}
+
+.hero h2 {
+  color: #ffffff;
+}
+
+.hero p {
+  color: #cbd5f5;
+}
+
+/* Headings */
+.section h3 {
+  color: #ffffff;
+  border-left-color: #2563eb;
+}
+
+.section h4 {
+  color: #e5e7eb;
+}
+
+/* Text */
+.section p,
+.points li {
+  color: #cbd5e1;
+}
+
+/* Tables */
+.rules-table th {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.rules-table td {
+  background: #020617;
+  color: #cbd5e1;
+  border-color: #1f2937;
+}
+
+.rules-table tr:hover {
+  background: #020617;
+}
+
+/* Navigation */
+header {
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+}
+
+nav a {
+  color: #cbd5e1;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+/* Highlight GST Calculator */
+nav a[href*="gst-calculator"] {
+  color: #60a5fa;
+}
+
+/* Forms */
+.service-form input,
+.service-form select,
+.service-form textarea {
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+}
+
+.service-form input::placeholder,
+.service-form textarea::placeholder {
+  color: #64748b;
+}
+
+/* Buttons */
+.btn {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #ffffff;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+}
+
+/* Footer */
+footer {
+  background: #020617;
+  color: #94a3b8;
+  border-top: 1px solid #1f2937;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+  color: #94a3b8;
+}
+
+/* WhatsApp button stays visible */
+.whatsapp-float {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+   /* =========================================================
+   REMOVE ALL LINK UNDERLINES
+========================================================= */
+
+a {
+  text-decoration: none;
+}
+
+a::after {
+  display: none !important;
+}
+
+
   .service-list li:hover {
     transform: none;
   }
