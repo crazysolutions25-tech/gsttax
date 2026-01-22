@@ -1,29 +1,112 @@
-<form action="https://formspree.io/f/xbddwlqn" method="POST" class="contact-form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – GST & Tax Consultancy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-  <input type="text" name="name" placeholder="Your Full Name" required>
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <h1 class="logo">GST Tax Consultancy</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="rules.html">Rules</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <input type="email" name="email" placeholder="Your Email Address" required>
+<!-- HERO WITH IMAGE -->
+<section class="hero" style="background-image: url('images/contact-hero.jpg'); background-size: cover; background-position: center; color: white;">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>We’re here to help you with GST, Income Tax, TDS and all compliance queries.</p>
+  </div>
+</section>
 
-  <input type="tel" name="mobile" placeholder="Mobile Number" required>
+<!-- CONTACT FORM -->
+<section class="section">
+  <div class="container">
 
-  <!-- SUBJECT DROPDOWN -->
-  <select name="subject" required>
-    <option value="">-- Select Subject --</option>
-    <option value="GST Registration">GST Registration</option>
-    <option value="GST Return Filing">GST Return Filing</option>
-    <option value="GST Compliance & Advisory">GST Compliance & Advisory</option>
-    <option value="Income Tax Return Filing">Income Tax Return Filing</option>
-    <option value="Tax Planning & Advisory">Tax Planning & Advisory</option>
-    <option value="TDS Return Filing">TDS Return Filing</option>
-    <option value="Accounting & Bookkeeping">Accounting & Bookkeeping</option>
-    <option value="Payroll Services">Payroll Services</option>
-    <option value="Audit & Compliance">Audit & Compliance</option>
-    <option value="Corporate & Business Services">Corporate & Business Services</option>
-    <option value="General Enquiry">General Enquiry</option>
-  </select>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
 
-  <textarea name="message" placeholder="Please describe your requirement in detail"></textarea>
+      <!-- FORM LEFT -->
+      <div style="flex: 1; min-width: 280px;">
+        <h3>Get in Touch</h3>
+        <p>Fill out the form below and our tax experts will reach out to you.</p>
 
-  <button type="submit" class="btn">Submit Enquiry</button>
+        <form action="https://formspree.io/f/xbddwlqn" method="POST" class="service-form">
 
-</form>
+          <input type="text" name="name" placeholder="Your Full Name" required>
+          <input type="email" name="email" placeholder="Your Email Address" required>
+          <input type="tel" name="mobile" placeholder="Mobile Number" required>
+
+          <select name="subject" required>
+            <option value="">-- Select Subject --</option>
+            <option value="GST Enquiry">GST Enquiry</option>
+            <option value="Income Tax Enquiry">Income Tax Enquiry</option>
+            <option value="TDS Enquiry">TDS Enquiry</option>
+            <option value="Accounting / Audit">Accounting / Audit</option>
+            <option value="General Enquiry">General Enquiry</option>
+          </select>
+
+          <textarea name="message" placeholder="Your Message / Requirement" required></textarea>
+
+          <button class="btn">Submit Now</button>
+        </form>
+      </div>
+
+      <!-- INFO RIGHT -->
+      <div style="flex: 1; min-width: 280px;">
+
+        <div style="margin-bottom: 20px;">
+          <img src="images/office-team.jpg" alt="Office Support" style="width:100%; border-radius:8px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <h4>📞 Call Us</h4>
+          <p>+91-89777-56656 <br> +91-89777-56670</p>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <h4>📧 Email</h4>
+          <p>support@gstconsultancy.in</p>
+        </div>
+
+        <div>
+          <h4>📍 Visit Us</h4>
+          <p>Office Address, City, State, India</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- OPTIONAL MAP -->
+<section class="section alt-bg">
+  <div class="container">
+    <h3>Our Location</h3>
+    <iframe
+      src="https://maps.google.com/maps?q=New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      style="border:0; width:100%; height:300px;" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/918977756670" class="whatsapp-float">WhatsApp</a>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 GST Tax Consultancy · All rights reserved
+</footer>
+
+</body>
+</html>
