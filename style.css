@@ -150,3 +150,25 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+/* ===== Rules Tables ===== */
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.rules-table th,
+.rules-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+.rules-table th {
+  background: #0b3c5d;
+  color: #fff;
+}
+
+.rules-table tr:nth-child(even) {
+  background: #f2f6f9;
+}
