@@ -378,3 +378,13 @@ footer {
 .service-card a {
   font-weight: 600;
 }
+
+/* Improve visual hierarchy */
+.section h3 {
+  border-left: 4px solid #0b3c5d;
+  padding-left: 12px;
+}
+
+.section + .section {
+  border-top: 1px solid #e5e7eb;
+}
