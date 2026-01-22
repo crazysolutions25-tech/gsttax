@@ -1,40 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+<form action="https://formspree.io/f/xbddwlqn" method="POST" class="contact-form">
 
-<header>
-  <div class="container nav">
-    <h1 class="logo">GST Tax Consultancy</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="rules.html">Rules</a>
-    </nav>
-  </div>
-</header>
+  <input type="text" name="name" placeholder="Your Full Name" required>
 
-<section class="hero">
-  <div class="container">
-    <h2>Contact Us</h2>
-  </div>
-</section>
+  <input type="email" name="email" placeholder="Your Email Address" required>
 
-<section class="section">
-  <div class="container">
-    <form action="https://formspree.io/f/xbddwlqn" method="POST" class="contact-form">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message"></textarea>
-      <button class="btn">Submit</button>
-    </form>
-  </div>
-</section>
+  <input type="tel" name="mobile" placeholder="Mobile Number" required>
 
-<footer>© 2026 GST Tax Consultancy</footer>
+  <!-- SUBJECT DROPDOWN -->
+  <select name="subject" required>
+    <option value="">-- Select Subject --</option>
+    <option value="GST Registration">GST Registration</option>
+    <option value="GST Return Filing">GST Return Filing</option>
+    <option value="GST Compliance & Advisory">GST Compliance & Advisory</option>
+    <option value="Income Tax Return Filing">Income Tax Return Filing</option>
+    <option value="Tax Planning & Advisory">Tax Planning & Advisory</option>
+    <option value="TDS Return Filing">TDS Return Filing</option>
+    <option value="Accounting & Bookkeeping">Accounting & Bookkeeping</option>
+    <option value="Payroll Services">Payroll Services</option>
+    <option value="Audit & Compliance">Audit & Compliance</option>
+    <option value="Corporate & Business Services">Corporate & Business Services</option>
+    <option value="General Enquiry">General Enquiry</option>
+  </select>
 
-</body>
-</html>
+  <textarea name="message" placeholder="Please describe your requirement in detail"></textarea>
+
+  <button type="submit" class="btn">Submit Enquiry</button>
+
+</form>
