@@ -265,3 +265,67 @@ footer {
     font-size: 20px;
   }
 }
+/* =========================
+   HOME PAGE ENHANCEMENTS
+========================= */
+
+/* Highlight sections */
+.alt-bg {
+  background-color: #f8fafc;
+}
+
+/* Info cards */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.info-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.info-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #0b3c5d;
+}
+
+.info-card p {
+  font-size: 15px;
+}
+
+/* Callout box */
+.callout {
+  border-left: 4px solid #0b3c5d;
+  background: #f1f5f9;
+  padding: 18px 20px;
+  margin-top: 25px;
+  font-size: 15px;
+}
+
+/* Strong CTA button */
+.cta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  background-color: #0b3c5d;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.cta-btn:hover {
+  background-color: #092f49;
+  text-decoration: none;
+}
