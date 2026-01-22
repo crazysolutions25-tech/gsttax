@@ -449,3 +449,123 @@ nav a {
     text-align: center;
   }
 }
+
+/* =========================================================
+   COLOR SYSTEM & BACKGROUND LAYERS
+========================================================= */
+
+:root {
+  --primary: #0b3c5d;
+  --secondary: #2563eb;
+  --soft-bg: #f4f7fb;
+  --alt-bg: #f9fbff;
+  --border-soft: #e6eaf0;
+}
+
+/* Alternate section backgrounds */
+.section:nth-of-type(even) {
+  background: var(--soft-bg);
+}
+
+.section:nth-of-type(odd) {
+  background: #ffffff;
+}
+
+/* Hero enhancement */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #eef4ff 100%
+  );
+}
+
+/* Accent line animation under headings */
+.section h3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  animation: expandLine 1.2s ease forwards;
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+/* =========================================================
+   ADVANCED MOTION (SUBTLE, CONTINUOUS)
+========================================================= */
+
+/* Floating effect for hero */
+.hero .container {
+  animation: floatIn 1.2s ease-out;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card pulse on load */
+.section .container {
+  animation: softPop 0.8s ease;
+}
+
+@keyframes softPop {
+  0% {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   NAVIGATION POLISH
+========================================================= */
+
+nav a {
+  position: relative;
+  padding: 6px 2px;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+/* Highlight GST Calculator */
+nav a[href*="gst-calculator"] {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* =========================================================
+   DEPTH & SEPARATION
+========================================================= */
+
+.section {
+  border-top: 1px solid var(--border-soft);
+}
+
+/* Footer contrast */
+footer {
+  background: var(--alt-bg);
+}
