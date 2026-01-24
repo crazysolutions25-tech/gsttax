@@ -1,4 +1,12 @@
 /* =========================================================
+   PREMIUM FINTECH THEME - GST CONSULTANT
+   "Vibe: Trust, Modernity, Glassmorphism"
+========================================================= */
+
+/* IMPORT GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+/* =========================================================
    GLOBAL RESET
 ========================================================= */
 * {
@@ -8,24 +16,34 @@
 }
 
 /* =========================================================
-   ROOT VARIABLES
+   ROOT VARIABLES (UPDATED PALETTE)
 ========================================================= */
 :root {
-  --bg-main: #0f172a;
-  --bg-dark: #020617;
-  --bg-card: #111827;
-  --border: #1f2937;
+  /* Deep Navy & Rich Black Backgrounds */
+  --bg-main: #020617; 
+  --bg-secondary: #0f172a;
+  
+  /* Glass Effect Colors */
+  --glass-bg: rgba(30, 41, 59, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 12px;
 
-  --text-main: #e5e7eb;
+  /* Typography */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  
+  --text-main: #f8fafc;
   --text-soft: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-muted: #64748b;
 
-  --primary: #2563eb;
-  --primary-light: #3b82f6;
-  --success: #22c55e;
+  /* Accents */
+  --primary: #3b82f6;
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --gold-accent: #fbbf24; /* Used for subtle financial highlights */
+  --success: #10b981;
 
-  --shadow-soft: 0 12px 40px rgba(0,0,0,0.5);
-  --shadow-strong: 0 20px 70px rgba(0,0,0,0.8);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================================================
@@ -36,48 +54,49 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Ubuntu, Arial, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg-main);
+  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 60%);
   color: var(--text-main);
   line-height: 1.7;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 /* =========================================================
-   LINKS (NO UNDERLINES)
+   LINKS
 ========================================================= */
 a {
-  color: var(--primary-light);
+  color: var(--primary);
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 a:hover {
   color: #60a5fa;
-}
-
-a::after {
-  display: none !important;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
 }
 
 /* =========================================================
    LAYOUT
 ========================================================= */
 .container {
-  width: 92%;
-  max-width: 1150px;
+  width: 90%;
+  max-width: 1200px;
   margin: auto;
 }
 
 /* =========================================================
-   HEADER / NAVIGATION
+   HEADER / NAVIGATION (GLASS EFFECT)
 ========================================================= */
 header {
-  background: var(--bg-dark);
-  border-bottom: 1px solid var(--border);
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 4px 0;
 }
 
 .nav {
@@ -88,271 +107,238 @@ header {
 }
 
 .logo {
-  font-size: 20px;
+  font-family: var(--font-heading);
+  font-size: 24px;
   font-weight: 700;
   color: #ffffff;
+  letter-spacing: 0.5px;
 }
 
 nav a {
-  margin-left: 22px;
-  font-size: 15px;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover {
-  transform: translateY(-2px);
-}
-
-/* Highlight GST Calculator */
-nav a[href*="gst-calculator"] {
-  color: var(--primary-light);
-  font-weight: 600;
-}
-
-/* =========================================================
-   BREADCRUMB
-========================================================= */
-.breadcrumb {
-  background: var(--bg-dark);
-  border-bottom: 1px solid var(--border);
-}
-
-.breadcrumb .container {
-  padding: 10px 0;
+  margin-left: 24px;
   font-size: 14px;
-  color: var(--text-muted);
+  font-weight: 500;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+nav a[href*="gst-calculator"] {
+  color: var(--gold-accent);
+  border-bottom: 1px solid var(--gold-accent);
 }
 
 /* =========================================================
-   HERO
+   HERO SECTION
 ========================================================= */
 .hero {
-  background: linear-gradient(
-    135deg,
-    #020617 0%,
-    #020617 40%,
-    #0f172a 100%
-  );
+  position: relative;
+  /* Add a subtle grid pattern overlay if you have one, or keep dark */
+  background: linear-gradient(180deg, rgba(2,6,23,0) 0%, #020617 100%);
+  padding: 100px 0 140px;
+  overflow: hidden;
+}
+
+/* Animated Glow behind Hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+  animation: pulseGlow 5s infinite alternate;
 }
 
 .hero .container {
-  padding: 80px 0;
-  animation: heroFade 1s ease;
-}
-
-@keyframes heroFade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  text-align: center; /* Center align looks more premium for consultants */
+  animation: fadeBlurIn 1s ease forwards;
 }
 
 .hero h2 {
-  font-size: 36px;
-  margin-bottom: 14px;
+  font-family: var(--font-heading);
+  font-size: 48px;
+  margin-bottom: 24px;
   color: #ffffff;
+  line-height: 1.2;
 }
 
 .hero p {
-  max-width: 700px;
+  max-width: 600px;
+  margin: 0 auto 30px;
   color: var(--text-soft);
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /* =========================================================
-   SECTIONS
+   SECTIONS & CARDS (GLASSMORPHISM)
 ========================================================= */
 .section {
-  padding: 70px 0;
+  padding: 80px 0;
 }
 
-.section:nth-child(even) {
-  background: #0b1220;
-}
-
-.section .container {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 50px;
-  box-shadow: var(--shadow-soft);
-  animation: sectionPop 0.8s ease;
-}
-
-@keyframes sectionPop {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.section .container:hover {
-  box-shadow: var(--shadow-strong);
-  transform: translateY(-3px);
-  transition: all 0.4s ease;
-}
-
-/* =========================================================
-   HEADINGS
-========================================================= */
 .section h3 {
-  font-size: 26px;
-  margin-bottom: 18px;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  margin-bottom: 30px;
   color: #ffffff;
-  border-left: 4px solid var(--primary);
-  padding-left: 14px;
+  position: relative;
+  display: inline-block;
 }
 
-.section h4 {
-  font-size: 18px;
-  margin: 24px 0 10px;
-  color: var(--text-main);
+/* Underline decoration for headings */
+.section h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+  margin-top: 8px;
+  border-radius: 2px;
 }
 
-.section p {
-  margin-bottom: 14px;
-  color: var(--text-soft);
+/* The Glass Card Style */
+.section .container, 
+.service-list li {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover Effects for Cards */
+.section .container:hover, 
+.service-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 /* =========================================================
-   LISTS
+   LISTS & SERVICES
 ========================================================= */
-.points {
-  margin: 14px 0 22px 22px;
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service-list li {
+  list-style: none;
+  margin-bottom: 0; /* Reset margin because of grid gap */
+  padding: 30px;
 }
 
 .points li {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: var(--text-soft);
-  opacity: 0;
-  transform: translateY(14px);
-  animation: listFade 0.6s ease forwards;
+  display: flex;
+  align-items: center;
 }
 
-.points li:nth-child(1){animation-delay:.1s}
-.points li:nth-child(2){animation-delay:.2s}
-.points li:nth-child(3){animation-delay:.3s}
-.points li:nth-child(4){animation-delay:.4s}
-.points li:nth-child(5){animation-delay:.5s}
-
-@keyframes listFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Add a checkmark before points */
+.points li::before {
+  content: '✓';
+  color: var(--success);
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 /* =========================================================
-   SERVICE LIST
-========================================================= */
-.service-list li {
-  list-style: none;
-  margin-bottom: 18px;
-  padding: 22px;
-  border-radius: 12px;
-  background: #020617;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  transition: all 0.35s ease;
-}
-
-.service-list li:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-strong);
-}
-
-/* =========================================================
-   TABLES
+   TABLES (CLEAN FINANCIAL STYLE)
 ========================================================= */
 .rules-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 22px 0;
+  margin: 30px 0;
   font-size: 15px;
-}
-
-.rules-table th,
-.rules-table td {
-  padding: 12px 14px;
-  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .rules-table th {
-  background: #020617;
-  color: #ffffff;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+  text-align: left;
+  padding: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
 .rules-table td {
-  background: #020617;
+  padding: 16px;
+  border-bottom: 1px solid var(--glass-border);
   color: var(--text-soft);
 }
 
-.rules-table tr:hover {
-  background: #020617;
+.rules-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rules-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+  color: #fff;
 }
 
 /* =========================================================
    FORMS
 ========================================================= */
-.service-form {
-  max-width: 520px;
-  margin-top: 20px;
-}
-
 .service-form input,
 .service-form select,
 .service-form textarea {
   width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 14px;
-  background: #020617;
-  color: var(--text-main);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 15px;
-}
-
-.service-form input::placeholder,
-.service-form textarea::placeholder {
-  color: var(--text-muted);
+  font-family: var(--font-body);
+  transition: all 0.3s;
 }
 
 .service-form input:focus,
-.service-form select:focus,
 .service-form textarea:focus {
   outline: none;
-  border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
+  border-color: var(--primary);
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 /* =========================================================
-   BUTTONS
+   BUTTONS (GRADIENT GLOW)
 ========================================================= */
 .btn {
   display: inline-block;
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  background: var(--primary-gradient);
   color: #ffffff;
   border: none;
-  padding: 12px 22px;
-  font-size: 15px;
-  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px; /* Pill shape looks more modern */
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(37,99,235,0.45);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
   transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 50px rgba(37,99,235,0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+  filter: brightness(1.1);
 }
 
 /* =========================================================
@@ -360,48 +346,53 @@ nav a[href*="gst-calculator"] {
 ========================================================= */
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #22c55e;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
   color: #ffffff;
-  padding: 12px 18px;
-  border-radius: 30px;
-  font-size: 14px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+  width: 60px; /* Make it a circle */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 28px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s;
+  z-index: 999;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) rotate(10deg);
 }
 
 /* =========================================================
-   FOOTER
+   ANIMATIONS
 ========================================================= */
-footer {
-  background: var(--bg-dark);
-  border-top: 1px solid var(--border);
-  padding: 22px 0;
-  text-align: center;
-  font-size: 14px;
-  color: var(--text-muted);
+@keyframes fadeBlurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
 }
 
 /* =========================================================
    MOBILE
 ========================================================= */
 @media (max-width: 768px) {
-
-  .hero h2 {
-    font-size: 28px;
-  }
-
-  .section .container {
-    padding: 30px;
-  }
-
-  nav a {
-    margin-left: 14px;
-    font-size: 14px;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
+  .hero h2 { font-size: 32px; }
+  .section .container { padding: 24px; }
+  .service-list { grid-template-columns: 1fr; }
+  nav a { margin-left: 15px; font-size: 13px; }
 }
